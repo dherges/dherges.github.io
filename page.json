@@ -1,0 +1,9 @@
+{
+  "src": "page",
+  "dest": "_gh_pages",
+  "layout": "page.hbs",
+  "layoutdir": "layouts",
+  "partials": "partials/**/*.hbs",
+  "helpers": "helpers/**/*.js",
+  "content": "content/"
+}
