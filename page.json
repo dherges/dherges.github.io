@@ -1,6 +1,5 @@
 {
-  "src": "page",
-  "dest": "_gh_pages",
+  "web": "_gh_pages",
   "layout": "page.hbs",
   "layoutdir": "layouts",
   "partials": "partials/**/*.hbs",

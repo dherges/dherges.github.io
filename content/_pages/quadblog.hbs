@@ -1,0 +1,15 @@
+---
+title: "Quadblog"
+---
+
+<div class="container">
+
+<ul>
+{{#withSort quadblog 'data.posted'}}
+  {{#each this.pages }}
+  <li>{{ this.data.title }}</li>
+  {{/each}}
+{{/withSort}}
+</ul>
+
+</div>

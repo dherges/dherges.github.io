@@ -13,10 +13,13 @@ module.exports = function (grunt) {
     connect: {
       dev: {
         options: {
+          hostname: 'localhost',
           port: 8000,
-          base: '<%= page.dest %>',
+          base: '<%= page.web %>',
           keepalive: true,
-          open: true
+          open: {
+            appName: '/Applications/Google Chrome.app'
+          }
         }
       }
     },
@@ -27,28 +30,31 @@ module.exports = function (grunt) {
 
         // page template, layouts, partials
         layout: '<%= page.layout %>',
-        layoutdir: '<%= page.src %>/<%= page.layoutdir %>',
-        partials: '<%= page.src %>/<%= page.partials %>',
-        helpers: '<%= page.src %>/<%= page.helpers %>',
+        layoutdir: '<%= page.layoutdir %>',
+        partials: '<%= page.partials %>',
+        helpers: '<%= page.helpers %>',
+
+        // data
+        data: 'package.json',
 
         // collections
         collections: [{
-          name: 'post',
+          name: 'quadblog',
           sortby: 'posted',
           sortorder: 'descending'
         }]
       },
-      posts: {
+      pages: {
         files: [{
-          cwd: '<%= page.src %>/<%= page.content %>',
-          dest: '<%= page.dest %>',
-          expand: true,
-          src: ['**/*.hbs', '**/*.md', '!_pages/**/*']
-        }, {
-          cwd: '<%= page.src %>/<%= page.content %>/_pages/',
-          dest: '<%= page.dest %>',
+          cwd: '<%= page.content %>/_pages',
+          dest: '<%= page.web %>',
           expand: true,
           src: '**/*.hbs'
+        }, {
+          cwd: '<%= page.content %>/quadblog',
+          dest: '<%= page.web %>/quadblog',
+          expand: true,
+          src: ['**/*.hbs', '**/*.md']
         }]
       }
     },
@@ -59,14 +65,14 @@ module.exports = function (grunt) {
           sourceMap: true,
           dumpLineNumbers: true
         },
-        files: {'<%= page.dest %>/assets/css/styles.css': '<%= page.src %>/less/styles.less'}
+        files: {'<%= page.web %>/assets/css/styles.css': 'less/styles.less'}
       },
       production: {
         options: {
           cleancss: true,
           compress: true
         },
-        files: {'<%= page.dest %>/assets/css/styles.css': '<%= page.src %>/less/styles.less'}
+        files: {'<%= page.web %>/assets/css/styles.css': 'styles/styles.less'}
       }
     },
 
@@ -76,7 +82,7 @@ module.exports = function (grunt) {
           cwd: '<%= page.src %>',
           expand: true,
           src: 'assets/**/*',
-          dest: '<%= page.dest %>'
+          dest: '<%= page.web %>'
         }]
       }
     },
@@ -84,7 +90,7 @@ module.exports = function (grunt) {
     clean: {
       dist: {
         files: [{
-          cwd: '<%= page.dest %>',
+          cwd: '<%= page.web %>',
           expand: true,
           src: ['**/*', '!vendor/**']
         }]

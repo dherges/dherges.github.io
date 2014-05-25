@@ -1,0 +1,41 @@
+@import "../_gh_pages/vendor/bootstrap/less/bootstrap.less";
+
+
+// spectral colours
+@brand-red:     hsva(0, 100%, 100%, 1.0);
+@brand-orange:  hsva(30, 100%, 100%, 1.0);
+@brand-yellow:  hsva(56, 100%, 100%, 1.0);
+@brand-green:   hsva(130, 100%, 100%, 1.0);
+@brand-cyan:    hsva(170, 100%, 100%, 1.0);
+@brand-blue:    hsva(197, 100%, 100%, 1.0);
+@brand-violet:  hsva(277, 100%, 100%, 1.0);
+
+
+// customizations
+@body-bg:       #fff;
+@text-color:    @gray-dark;
+
+
+// own variables
+@footer-bg:     transparent;
+@footer-border: @navbar-default-border;
+
+
+body {
+  padding-top: 70px;
+}
+
+
+
+// footer
+.footer {
+  border-top: 1px solid @footer-border;
+  padding-top: 40px;
+  background-color: @footer-bg;
+  .text-center();
+
+  p {
+    font-size: @font-size-small;
+    margin-bottom: 0;
+  }
+}
