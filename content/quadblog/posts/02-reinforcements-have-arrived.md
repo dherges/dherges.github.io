@@ -6,7 +6,7 @@ tags:
 - one
 - two
 section: quadblog
-published: false
+published: true
 ---
 
 Yeah yeah yeah, real stuff here...

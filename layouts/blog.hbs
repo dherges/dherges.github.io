@@ -20,9 +20,11 @@
       {{/is}}
     </div>
     <div class="col-md-4">
-      <div class="blog-tags">
-        {{> blog-tags}}
-      </div>
+      {{#is basename 'index'}}
+        {{> blog-tags this}}
+      {{else}}
+        {{> blog-tags page}}
+      {{/is}}
     </div>
   </div>
 

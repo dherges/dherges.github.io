@@ -7,7 +7,7 @@
           <a href="{{{ relativeLink }}}">{{ data.title }}</a>
           <small>{{ formatDate data.date "%Y/%m/%d" }}</small>
         </h2>
-        <p class="excerpt">{{ excerpt page 42 }}</p>
+        <p class="excerpt">{{#markdown}}{{ excerpt page 42 }}{{/markdown}}</p>
         <a class="text-right"
            href="{{ relativeLink }}">&raquo; Read more</a>
       </div>

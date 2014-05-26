@@ -1,6 +1,6 @@
 {{! List of Tags }}
-<div>
+<div class="blog-tags">
   {{#each tags}}
-    <span class="label label-default">{{ tag }}</span>
+    <span class="label label-default">{{#if tag}}{{ tag }}{{else}}{{ this }}{{/if}}</span>
   {{/each}}
 </div>
