@@ -35,11 +35,19 @@ module.exports = function (grunt) {
     },
 
     copy: {
-      dist: {
+      assets: {
         files: [{
-          cwd: '<%= page.src %>',
+          cwd: '',
           expand: true,
           src: 'assets/**/*',
+          dest: '<%= page.web %>'
+        }]
+      },
+      content: {
+        files: [{
+          cwd: 'content',
+          expand: true,
+          src: '**/*.jpg',
           dest: '<%= page.web %>'
         }]
       }
