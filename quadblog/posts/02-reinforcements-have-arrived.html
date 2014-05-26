@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Reinforcements have arrived | dherges.github.io</title>
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="/assets/css/styles.min.css" />
+<script type="text/javascript" src="/vendor/jquery/dist/jquery.js"></script>
+<script type="text/javascript" src="/vendor/bootstrap/dist/js/bootstrap.js"></script>
+
+</head>
+<body>
+  
+<nav class="navbar navbar-default navbar-static-top" role="navigation">
+  <div class="container">
+
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button"
+              class="navbar-toggle"
+              data-toggle="collapse"
+              data-target="#navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Home</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="navbar-collapse-1">
+      <ul class="nav navbar-nav masthead-nav">
+
+        <li class="active">
+          <a href="/quadblog">Quadblog</a>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+
+  <div class="container">
+    <div class="col-md-8">
+      
+        <div class="blog-post">
+          <h2>Reinforcements have arrived</h2>
+          <p>Today, let&#39;s see what parts are needed to build a quadcopter.</p>
+<p>The hardware is basically a frame with 4 arms, 4 motors with an electronic speed
+controller (ESC) for each motor, 4 propellers, a power distribution board (PDB), and a
+LiPo battery. Most important, the flight controller is a small computing unit that
+controls input for the ESCs/motors.</p>
+<p>Let&#39;s start with the frame, motors, and the stuff. I decided to build my copter based
+on a <a href="&quot;http://www.dji.com/product/flame-wheel-arf&quot;">DJI Flamewheel</a> frame.</p>
+<p>There are lots of blog posts on the internet on what frame you should choose. Depending
+on the frame&#39;s wing-span you need motors, ESCs, and propellers that produce enough power
+to carry the quadcopter. All of these parts need to fit to each other. For example, the
+wing-span requires a certain propeller size, but a certain propeller size needs suitable
+motors and ESCs that are interoperable. Experienced quadcopter guys can tell you more
+precisely how these things are related to each other.</p>
+<p><img src="images/flamewheel.jpg" alt="DJI Flamewheel 450" title="DJI Flamewheel 450"></p>
+<p>If you&#39;re a beginner like me, the easiest way is to choose an &quot;Almost Ready to Fly&quot;
+(ARF)-Kit. These kits ship with all the parts mentioned above and the parts are 
+guaranteed to work with each other. I&#39;ve also spoken to a friend of mine who build
+a copter and he&#39;s also used the DJI frames. So, that seems to be a good choice.</p>
+<p>The Flamewheels come in different sizes. I&#39;ve read that the smallest version (330) can
+also be used indoor. The larger ones (450, 550) come with nearly the same configuration
+and are for outdoor usage. The number tells you what size the copter is; e.g., the 330
+has a diagonal wheelbase of 330mm and when used with 4.5in propellers the copter will
+have a size of approx. 42x42cm.</p>
+<p>I choose the 450 Flamewheel for my quadcopter. One more benefit of the DJI frames is
+that they have a built-in power distribution board. You can see the bottom plate and
+upper plate in the middle of the picture below. The bottom plate has built-in contacts
+to connect the ESCs and batteries. Motors and ESCs are shown in the top right. Battery
+and charger are not included (bottom right); you need to buy this in addition. The
+landing gear (beneath the propellers) is optional.</p>
+<p><img src="images/flamewheel-parts.jpg" alt="DJI Flamewheel 450 Parts" title="DJI Flamewheel 450 Parts"></p>
+<p>The most important part of the quadcopter is the flight controller. It controls the
+motors and ESCs, thus powering the quadcopter. Flight controllers also have sensors
+such as accelerometers, gyroscopes, and GPS to stabilize and hold the copter&#39;s
+position. I&#39;ve decided to buy a <a href="http://pixhawk.org/modules/pixhawk">3DR Pixhawk</a>
+controller because its firmware is open-source
+and you can program it in C programming language (that&#39;s the one thing software
+engineers want to do).</p>
+<p>Usually, the flight controller is connected to a radio antenna so that you can steer it
+with a remote control. For my purposes, I decided to not buy GPS module and radio
+equipment, because I will try to connect an Android smartphone to the Pixhawk (probably
+through a USB link). Then, I
+will mount the Android on the copter and use its camera, GPS, and wireless to establish
+a remote control. I guess that I will try to set-up a WiFi network and then use my other
+smartphone to remote control the quadcopter.</p>
+<p><img src="images/pixhawk.jpg" alt="3DR Pixhawk" title="3DR Pixhawk"></p>
+<p>For now, the shopping list is:</p>
+<ul>
+<li>DJI Flamewheel 450 ARF Kit, 169,– €, <a href="http://www.mhm-modellbau.de/part-CP.MX.540005.php" title="DJI Flamewheel bei MHM Modellbau">MHM Modellbau</a> </li>
+<li>3S LiPo, at least 2.000-2.500 mAh, ~25,– €, <a href="http://www.mhm-modellbau.de/part-R-6990.php" title="3S LiPo bei MHM Modellbau">MHM Modellbau</a></li>
+<li>LiPo Lader, ~23,– €, <a href="http://www.mhm-modellbau.de/part-G-6454.php?utm_source=order-mail&amp;utm_term=item" title="LiPo Lader bei MHM Modellbau">MHM Modellbau</a></li>
+<li>3DR Pixhawk 2.4, 200-280,– €, <a href="http://www.uav-store.de/autopilot-1/pixhawk/#cc-m-product-8496353793" title="Pixhawk bei UAV Store">UAV Store</a></li>
+</ul>
+<p>Moreover, you need some &quot;Kleinscheiss&quot; to assemble the whole thing:</p>
+<ul>
+<li>Loctide (&quot;Schraubensicherung&quot;) from your local store</li>
+<li>a screwdriver set, e.g. this Hama set on <a href="http://www.amazon.de/Hama-Mini-Schraubendreher-Etui-13-teilig/dp/B000NRU88E/ref=sr_1_1?ie=UTF8&amp;qid=1401136273&amp;sr=8-1&amp;keywords=macbook+schraubenzieher">Amazon</a></li>
+<li>soldering stuff (&quot;Lötkolben&quot;) to connect the</li>
+</ul>
+<p>Next time, we&#39;ll solder the electrical stuff and assemble the frame.</p>
+
+        </div>
+      
+    </div>
+    <div class="col-md-4">
+      
+        
+<div class="blog-tags">
+  
+</div>
+
+      
+    </div>
+  </div>
+
+  
+
+
+<footer class="footer" role="contentinfo">
+  <div class="container">
+
+    <!-- Social Buttons -->
+    <div class="footer-social-buttons">
+      <ul class="list-inline">
+        <li>
+          <iframe src="//ghbtns.com/github-btn.html?user=dherges&type=follow"
+                  allowtransparency="true" frameborder="0" scrolling="0"
+                  width="130" height="20"></iframe>
+        </li>
+        <li>
+          <iframe src="//platform.twitter.com/widgets/follow_button.1400006231.html#_=1401009308194&amp;id=twitter-widget-1&amp;lang=en&amp;screen_name=haggis_2308&amp;show_count=false&amp;show_screen_name=true&amp;size=m"
+                  id="twitter-widget-1"
+                  class="twitter-follow-button twitter-follow-button"
+                  title="Twitter Follow Button" 
+                  scrolling="no" frameborder="0" allowtransparency="true"
+                  width="150" height="20"></iframe>
+        </li>
+      </ul>
+    </div>
+
+    <p>Designed on top of <a href="http://getbootstrap.com">Twitter Bootstrap</a>.</p>
+    <p>Built with <a href="http://assemble.io">Assemble</a>.</p>
+    <p>Impressum: David Herges, Martinsstr. 28-30, 55116 Mainz</p>
+
+  </div>
+</footer>
+
+</body>
+</html>
