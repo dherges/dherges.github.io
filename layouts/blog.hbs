@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  {{> html-head}}
+</head>
+<body>
+  {{> navbar}}
+
+  <div class="container">
+    <div class="col-md-8">
+      {{#is basename 'index'}}
+        {{> blog-list}}
+      {{else}}
+        <div class="blog-post">
+          <h2>{{ page.title }}</h2>
+          {{#markdown}}
+            {{> body}}
+          {{/markdown}}
+        </div>
+      {{/is}}
+    </div>
+    <div class="col-md-4">
+      <div class="blog-tags">
+        {{> blog-tags}}
+      </div>
+    </div>
+  </div>
+
+  {{> footer}}
+</body>
+</html>

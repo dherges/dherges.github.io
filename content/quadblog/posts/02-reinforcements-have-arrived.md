@@ -1,7 +1,12 @@
 ---
 title: "Reinforcements have arrived"
-posted: 2014-05-27
-quadblog: true
+date: 2014-05-27
+tags:
+- hello
+- one
+- two
+section: quadblog
+published: false
 ---
 
 Yeah yeah yeah, real stuff here...

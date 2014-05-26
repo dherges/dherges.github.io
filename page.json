@@ -1,6 +1,6 @@
 {
   "web": "_gh_pages",
-  "layout": "page.hbs",
+  "layout": "default.hbs",
   "layoutdir": "layouts",
   "partials": "partials/**/*.hbs",
   "helpers": "helpers/**/*.js",

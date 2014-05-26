@@ -24,55 +24,13 @@ module.exports = function (grunt) {
       }
     },
 
-    assemble: {
-      options: {
-        flatten: true,
-
-        // page template, layouts, partials
-        layout: '<%= page.layout %>',
-        layoutdir: '<%= page.layoutdir %>',
-        partials: '<%= page.partials %>',
-        helpers: '<%= page.helpers %>',
-
-        // data
-        data: 'package.json',
-
-        // collections
-        collections: [{
-          name: 'quadblog',
-          sortby: 'posted',
-          sortorder: 'descending'
-        }]
-      },
-      pages: {
+    clean: {
+      dist: {
         files: [{
-          cwd: '<%= page.content %>/_pages',
-          dest: '<%= page.web %>',
+          cwd: '<%= page.web %>',
           expand: true,
-          src: '**/*.hbs'
-        }, {
-          cwd: '<%= page.content %>/quadblog',
-          dest: '<%= page.web %>/quadblog',
-          expand: true,
-          src: ['**/*.hbs', '**/*.md']
+          src: ['**/*', '!vendor/**']
         }]
-      }
-    },
-
-    less: {
-      development: {
-        options: {
-          sourceMap: true,
-          dumpLineNumbers: true
-        },
-        files: {'<%= page.web %>/assets/css/styles.css': 'less/styles.less'}
-      },
-      production: {
-        options: {
-          cleancss: true,
-          compress: true
-        },
-        files: {'<%= page.web %>/assets/css/styles.css': 'styles/styles.less'}
       }
     },
 
@@ -87,24 +45,74 @@ module.exports = function (grunt) {
       }
     },
 
-    clean: {
-      dist: {
+    less: {
+      development: {
+        options: {
+          sourceMap: true,
+          dumpLineNumbers: true
+        },
+        files: {'<%= page.web %>/assets/css/styles.css': 'styles/styles.less'}
+      },
+      production: {
+        options: {
+          cleancss: true,
+          compress: true
+        },
+        files: {'<%= page.web %>/assets/css/styles.min.css': 'styles/styles.less'}
+      }
+    },
+
+    assemble: {
+      options: {
+        flatten: true,
+
+        // page template, layouts, partials
+        layout: '<%= page.layout %>',
+        layoutdir: '<%= page.layoutdir %>',
+        partials: '<%= page.partials %>',
+        helpers: '<%= page.helpers %>',
+
+        // data
+        data: 'package.json',
+
+        // plugins
+        plugins: ['assemble-related-pages'],
+
+      },
+      pages: {
         files: [{
-          cwd: '<%= page.web %>',
+          cwd: '<%= page.content %>/_pages',
+          dest: '<%= page.web %>',
           expand: true,
-          src: ['**/*', '!vendor/**']
+          src: ['*.hbs', '*.md']
+        }]
+      },
+      quadblog: {
+        options: {
+          layout: 'blog.hbs',
+          collections: [{
+            title: 'pages',
+            sortorder: 'descending' 
+          }]
+        },
+        files: [{
+          cwd: '<%= page.content %>/quadblog',
+          dest: '<%= page.web %>/quadblog',
+          expand: true,
+          src: ['**/*.hbs', '**/*.md']
         }]
       }
+
     }
   });
 
   // Load npm plugins to provide necessary tasks.
+  grunt.loadNpmTasks('assemble');
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-less');
-  grunt.loadNpmTasks('assemble');
 
   // Default tasks to be run.
-  grunt.registerTask('default', ['clean', 'copy', 'less:production', 'assemble', 'connect']);
+  grunt.registerTask('default', ['clean', 'copy', 'less:production', 'assemble']);
 };
