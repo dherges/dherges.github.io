@@ -77,9 +77,15 @@ For now, the shopping list is:
 
 Moreover, you need some "Kleinscheiss" to assemble the whole thing:
 
+- an XT 60 plug (male connector); it's NOT included in the DJI package!
 - Loctide ("Schraubensicherung") from your local store
 - a screwdriver set, e.g. this Hama set on [Amazon](http://www.amazon.de/Hama-Mini-Schraubendreher-Etui-13-teilig/dp/B000NRU88E/ref=sr_1_1?ie=UTF8&qid=1401136273&sr=8-1&keywords=macbook+schraubenzieher)
-- soldering stuff ("Lötkolben") to connect the
+- soldering stuff ("Lötkolben") to connect the wirings
+- a voltage meter ("Voltmeter") to check if the wirings are properly connected
+- lacquer ("Lötlack") or hot-melt adhesive to cover the solder points
+- heat-shrinkable thubes ("Schrumpfschlauch" or "Schrumpelschlauch") for the XT 60 plug
+- cable tie ("Kabelbinder") is always a good thing to have
+
 
 Next time, we'll solder the electrical stuff and assemble the frame.
 
