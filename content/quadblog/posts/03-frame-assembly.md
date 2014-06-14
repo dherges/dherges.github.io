@@ -32,7 +32,9 @@ soldering the XT 60 plug is a a bit tricky.
 The other dude [has some tips'n'tricks in store][3]. First, don't use hot-melt adhesive.
 Lacqure protects the soldering points and will not melt if the circuit heatens up.
 Second, it's not a bad thing to put some foam on the underside of the wings so that the
-ESCs are protected from vibrations.
+ESCs are protected from vibrations. I decided to do both things. 
+
+--> TODO: put a photo here
 
 A good friend of mine gave me another idea: to reduce electric interference it's good
 to have the ESC cables on each side of the wings.
