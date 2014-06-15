@@ -1,4 +1,5 @@
 {
+  "title": "spektrakel.de",
   "web": "_gh_pages",
   "layout": "default.hbs",
   "layoutdir": "layouts",

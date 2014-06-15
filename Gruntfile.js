@@ -6,16 +6,16 @@ module.exports = function (grunt) {
   'use strict';
 
   grunt.initConfig({
+    bower:  grunt.file.readJSON('.bowerrc'),
     pkg:    grunt.file.readJSON('package.json'),
-    vendor: grunt.file.readJSON('.bowerrc').vendor,
-    page:   grunt.file.readJSON('page.json'),
+    site:   grunt.file.readJSON('site.json'),
 
     connect: {
       dev: {
         options: {
           hostname: 'localhost',
           port: 8000,
-          base: '<%= page.web %>',
+          base: '<%= site.web %>',
           keepalive: true,
           open: {
             appName: '/Applications/Google Chrome.app'
@@ -27,7 +27,7 @@ module.exports = function (grunt) {
     clean: {
       dist: {
         files: [{
-          cwd: '<%= page.web %>',
+          cwd: '<%= site.web %>',
           expand: true,
           src: ['**/*', '!vendor/**']
         }]
@@ -40,7 +40,7 @@ module.exports = function (grunt) {
           cwd: '',
           expand: true,
           src: 'assets/**/*',
-          dest: '<%= page.web %>'
+          dest: '<%= site.web %>'
         }]
       },
       content: {
@@ -48,7 +48,7 @@ module.exports = function (grunt) {
           cwd: 'content',
           expand: true,
           src: '**/*.jpg',
-          dest: '<%= page.web %>'
+          dest: '<%= site.web %>'
         }]
       }
     },
@@ -59,14 +59,14 @@ module.exports = function (grunt) {
           sourceMap: true,
           dumpLineNumbers: true
         },
-        files: {'<%= page.web %>/assets/css/styles.css': 'styles/styles.less'}
+        files: {'<%= site.web %>/assets/css/styles.css': 'styles/styles.less'}
       },
       production: {
         options: {
           cleancss: true,
           compress: true
         },
-        files: {'<%= page.web %>/assets/css/styles.min.css': 'styles/styles.less'}
+        files: {'<%= site.web %>/assets/css/styles.min.css': 'styles/styles.less'}
       }
     },
 
@@ -75,13 +75,13 @@ module.exports = function (grunt) {
         flatten: true,
 
         // page template, layouts, partials
-        layout: '<%= page.layout %>',
-        layoutdir: '<%= page.layoutdir %>',
-        partials: '<%= page.partials %>',
-        helpers: '<%= page.helpers %>',
+        layout: '<%= site.layout %>',
+        layoutdir: '<%= site.layoutdir %>',
+        partials: '<%= site.partials %>',
+        helpers: '<%= site.helpers %>',
 
-        // data
-        data: 'package.json',
+        // json data assigned to the templates
+        data: '*.json',
 
         // plugins
         plugins: ['assemble-related-pages'],
@@ -89,8 +89,8 @@ module.exports = function (grunt) {
       },
       pages: {
         files: [{
-          cwd: '<%= page.content %>/_pages',
-          dest: '<%= page.web %>',
+          cwd: '<%= site.content %>/_pages',
+          dest: '<%= site.web %>',
           expand: true,
           src: ['*.hbs', '*.md']
         }]
@@ -104,8 +104,8 @@ module.exports = function (grunt) {
           }]
         },
         files: [{
-          cwd: '<%= page.content %>/quadblog',
-          dest: '<%= page.web %>/quadblog',
+          cwd: '<%= site.content %>/quadblog',
+          dest: '<%= site.web %>/quadblog',
           expand: true,
           src: ['**/*.hbs', '**/*.md']
         }]
