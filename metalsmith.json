@@ -12,6 +12,10 @@
     },
     "metalsmith-layouts": {
       "engine": "handlebars"
+    },
+    "metalsmith-assets": {
+      "source": "./assets",
+      "destination": "./assets"
     }
   }
 }

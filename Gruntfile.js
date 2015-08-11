@@ -6,9 +6,8 @@ module.exports = function (grunt) {
   'use strict';
 
   grunt.initConfig({
-    bower:  grunt.file.readJSON('.bowerrc'),
-    pkg:    grunt.file.readJSON('package.json'),
-    site:   grunt.file.readJSON('site.json'),
+    pkg:          grunt.file.readJSON('package.json'),
+    metalsmith:   grunt.file.readJSON('metalsmith.json'),
 
     connect: {
       dev: {
@@ -22,8 +21,19 @@ module.exports = function (grunt) {
           }
         }
       }
+    },
+
+    copy: {
+      bower_components: {
+        files: [{
+          cwd: '',
+          expand: true,
+          src: 'bower_components/**/*',
+          dest: '<%= metalsmith.destination %>/vendor'
+        }]
+      }
     }
-    
+
 //    clean: {
 //      dist: {
 //        files: [{
@@ -77,7 +87,7 @@ module.exports = function (grunt) {
     var done = this.async()
 
     var exec = require('child_process').exec;
-    var child = exec('node_modules/.bin/metalsmith --config site.json')
+    var child = exec('node_modules/.bin/metalsmith')
     child.stdout.on('data', function(data) {
       grunt.log.writeln(data);
     })
