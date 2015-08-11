@@ -14,113 +14,139 @@ module.exports = function (grunt) {
       dev: {
         options: {
           hostname: 'localhost',
-          port: 8000,
-          base: '<%= site.web %>',
+          port: 13008,
+          base: '_gh_pages',
           keepalive: true,
           open: {
             appName: '/Applications/Google Chrome.app'
           }
         }
       }
-    },
-
-    clean: {
-      dist: {
-        files: [{
-          cwd: '<%= site.web %>',
-          expand: true,
-          src: ['**/*', '!vendor/**']
-        }]
-      }
-    },
-
-    copy: {
-      assets: {
-        files: [{
-          cwd: '',
-          expand: true,
-          src: 'assets/**/*',
-          dest: '<%= site.web %>'
-        }]
-      },
-      content: {
-        files: [{
-          cwd: 'content',
-          expand: true,
-          src: '**/*.jpg',
-          dest: '<%= site.web %>'
-        }]
-      }
-    },
-
-    less: {
-      development: {
-        options: {
-          sourceMap: true,
-          dumpLineNumbers: true
-        },
-        files: {'<%= site.web %>/assets/css/styles.css': 'styles/styles.less'}
-      },
-      production: {
-        options: {
-          cleancss: true,
-          compress: true
-        },
-        files: {'<%= site.web %>/assets/css/styles.min.css': 'styles/styles.less'}
-      }
-    },
-
-    assemble: {
-      options: {
-        flatten: true,
-
-        // page template, layouts, partials
-        layout: '<%= site.layout %>',
-        layoutdir: '<%= site.layoutdir %>',
-        partials: '<%= site.partials %>',
-        helpers: '<%= site.helpers %>',
-
-        // json data assigned to the templates
-        data: '*.json',
-
-        // plugins
-        plugins: ['assemble-related-pages'],
-
-      },
-      pages: {
-        files: [{
-          cwd: '<%= site.content %>/_pages',
-          dest: '<%= site.web %>',
-          expand: true,
-          src: ['*.hbs', '*.md']
-        }]
-      },
-      quadblog: {
-        options: {
-          layout: 'blog.hbs',
-          collections: [{
-            title: 'pages',
-            sortorder: 'descending' 
-          }]
-        },
-        files: [{
-          cwd: '<%= site.content %>/quadblog',
-          dest: '<%= site.web %>/quadblog',
-          expand: true,
-          src: ['**/*.hbs', '**/*.md']
-        }]
-      }
-
     }
+    
+//    clean: {
+//      dist: {
+//        files: [{
+//          cwd: '<%= site.web %>',
+//          expand: true,
+//          src: ['**/*', '!vendor/**']
+//        }]
+//      }
+//    },
+//
+//    copy: {
+//      assets: {
+//        files: [{
+//          cwd: '',
+//          expand: true,
+//          src: 'assets/**/*',
+//          dest: '<%= site.web %>'
+//        }]
+//      },
+//      content: {
+//        files: [{
+//          cwd: 'content',
+//          expand: true,
+//          src: '**/*.jpg',
+//          dest: '<%= site.web %>'
+//        }]
+//      }
+//    },
+//
+//    less: {
+//      development: {
+//        options: {
+//          sourceMap: true,
+//          dumpLineNumbers: true
+//        },
+//        files: {'<%= site.web %>/assets/css/styles.css': 'styles/styles.less'}
+//      },
+//      production: {
+//        options: {
+//          cleancss: true,
+//          compress: true
+//        },
+//        files: {'<%= site.web %>/assets/css/styles.min.css': 'styles/styles.less'}
+//      }
+//    },
+
+
   });
 
+  grunt.registerTask('metalsmith', function() {
+    var done = this.async()
+
+    var exec = require('child_process').exec;
+    var child = exec('node_modules/.bin/metalsmith --config site.json')
+    child.stdout.on('data', function(data) {
+      grunt.log.writeln(data);
+    })
+    child.stderr.on('data', function(data) {
+      grunt.log.error(data);
+    })
+    child.on('close', function(code) {
+      grunt.log.ok('Metalsmith finished with exit code: ' + code);
+      done()
+    })
+
+//    var metalsmith = new Metalsmith(__dirname )
+//    
+//    var site = grunt.config.get('site')
+//
+//    metalsmith.metadata(site.metadata)
+//              .source('content')
+//              .destination('_gh_pages')
+//
+//    var plugins = normalizePlugins(site.plugins);
+//    plugins.forEach(function (plugin) {
+//      for (var name in plugin) {
+//        var opts = plugin[name]
+//        var fn
+//
+//        try {
+//          fn = require(name)
+//        } catch (e) {
+//          return
+//        }
+//
+//        metalsmith.use(fn(opts))
+//      }
+//    })
+//
+//    function normalizePlugins (plugins) {
+//      if (plugins instanceof Array) {
+//        return plugins
+//      }
+//      var ret = []
+//
+//      for (var key in plugins) {
+//        var plugin = {}
+//        plugin[key] = plugins[key]
+//        ret.push(plugin)
+//      }
+//
+//      return ret
+//    }
+//console.log(metalsmith)
+//
+//    metalsmith.build(function(err) {
+//console.log("done...")
+//      if (err) {
+//        grunt.log.error('metalsmith threw error' + err)
+//        throw err
+//      }
+//
+//      grunt.log.writeln('Generated files from ' + metalsmith.source() + ' to ' + metalsmith.destination())
+//    })
+  
+  })
+  
   // Load npm plugins to provide necessary tasks.
-  grunt.loadNpmTasks('assemble');
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-less');
 
   // Default tasks to be run.
-  grunt.registerTask('default', ['clean', 'copy', 'less:production', 'assemble']);
+  grunt.registerTask('default', ['']);
 };

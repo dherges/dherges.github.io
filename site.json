@@ -1,9 +1,17 @@
 {
-  "title": "spektrakel.de",
-  "web": "_gh_pages",
-  "layout": "default.hbs",
-  "layoutdir": "layouts",
-  "partials": "partials/**/*.hbs",
-  "helpers": "helpers/**/*.js",
-  "content": "content/"
+  "metadata": {
+    "title": "My Site",
+    "description": "stuff..."
+  },
+  "source": "content",
+  "destination": "_gh_pages",
+  "plugins": {
+    "metalsmith-markdown": {},
+    "metalsmith-permalinks": {
+      "pattern": ":title"
+    },
+    "metalsmith-layouts": {
+      "engine": "handlebars"
+    }
+  }
 }
