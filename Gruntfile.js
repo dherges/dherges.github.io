@@ -16,6 +16,7 @@ module.exports = function (grunt) {
           port: 13008,
           base: '_gh_pages',
           keepalive: true,
+          livereload : 35729,
           open: {
             appName: '/Applications/Google Chrome.app'
           }
@@ -23,42 +24,24 @@ module.exports = function (grunt) {
       }
     },
 
-    copy: {
-      bower_components: {
-        files: [{
-          cwd: '',
-          expand: true,
-          src: 'bower_components/**/*',
-          dest: '<%= metalsmith.destination %>/vendor'
-        }]
+    watch: {
+      livereload: {
+        files: ['<%= metalsmith.source %>/**/*', 'partials/**/*', 'layouts/**/*'],
+        tasks: ['default'],
+        options: {
+          livereaload: 35729
+        }
       }
     }
 
-//    clean: {
-//      dist: {
-//        files: [{
-//          cwd: '<%= site.web %>',
-//          expand: true,
-//          src: ['**/*', '!vendor/**']
-//        }]
-//      }
-//    },
-//
+
 //    copy: {
-//      assets: {
+//      bower_components: {
 //        files: [{
 //          cwd: '',
 //          expand: true,
-//          src: 'assets/**/*',
-//          dest: '<%= site.web %>'
-//        }]
-//      },
-//      content: {
-//        files: [{
-//          cwd: 'content',
-//          expand: true,
-//          src: '**/*.jpg',
-//          dest: '<%= site.web %>'
+//          src: 'bower_components/**/*',
+//          dest: '<%= metalsmith.destination %>/vendor'
 //        }]
 //      }
 //    },
@@ -69,14 +52,24 @@ module.exports = function (grunt) {
 //          sourceMap: true,
 //          dumpLineNumbers: true
 //        },
-//        files: {'<%= site.web %>/assets/css/styles.css': 'styles/styles.less'}
+//        files: {'<%= metalsmith.destination %>/assets/css/styles.css': 'bower_components/bootstrap/less/bootstrap.less'}
 //      },
 //      production: {
 //        options: {
 //          cleancss: true,
 //          compress: true
 //        },
-//        files: {'<%= site.web %>/assets/css/styles.min.css': 'styles/styles.less'}
+//        files: {'<%= metalsmith.destination %>/assets/css/styles.min.css': 'bower_components/bootstrap/less/bootstrap.less'}
+//      }
+//    },
+//
+//    clean: {
+//      dist: {
+//        files: [{
+//          cwd: '<%= site.web %>',
+//          expand: true,
+//          src: ['**/*', '!vendor/**']
+//        }]
 //      }
 //    },
 
@@ -156,7 +149,8 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-less');
+  grunt.loadNpmTasks('grunt-contrib-watch');
 
   // Default tasks to be run.
-  grunt.registerTask('default', ['']);
+  grunt.registerTask('default', ['metalsmith']);
 };
