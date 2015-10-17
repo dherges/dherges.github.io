@@ -90,60 +90,10 @@ module.exports = function (grunt) {
     child.on('close', function(code) {
       grunt.log.ok('Metalsmith finished with exit code: ' + code);
       done()
-    })
-
-//    var metalsmith = new Metalsmith(__dirname )
-//    
-//    var site = grunt.config.get('site')
-//
-//    metalsmith.metadata(site.metadata)
-//              .source('content')
-//              .destination('_gh_pages')
-//
-//    var plugins = normalizePlugins(site.plugins);
-//    plugins.forEach(function (plugin) {
-//      for (var name in plugin) {
-//        var opts = plugin[name]
-//        var fn
-//
-//        try {
-//          fn = require(name)
-//        } catch (e) {
-//          return
-//        }
-//
-//        metalsmith.use(fn(opts))
-//      }
-//    })
-//
-//    function normalizePlugins (plugins) {
-//      if (plugins instanceof Array) {
-//        return plugins
-//      }
-//      var ret = []
-//
-//      for (var key in plugins) {
-//        var plugin = {}
-//        plugin[key] = plugins[key]
-//        ret.push(plugin)
-//      }
-//
-//      return ret
-//    }
-//console.log(metalsmith)
-//
-//    metalsmith.build(function(err) {
-//console.log("done...")
-//      if (err) {
-//        grunt.log.error('metalsmith threw error' + err)
-//        throw err
-//      }
-//
-//      grunt.log.writeln('Generated files from ' + metalsmith.source() + ' to ' + metalsmith.destination())
-//    })
-  
+    })  
   })
-  
+
+
   // Load npm plugins to provide necessary tasks.
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-contrib-clean');
