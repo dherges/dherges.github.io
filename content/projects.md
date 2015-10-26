@@ -1,10 +1,10 @@
 ---
+title: Projects
 layout: index.hbs
-title: Home
 collection: nav
-order: 1
+order: 30
 ---
 
-abc xyz ...
 
+projects...
 

@@ -1,0 +1,15 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+   <div class="navbar-header">
+      <a class="navbar-brand" href="#">
+        <img alt="Brand" src="...">
+      </a>
+    </div>
+
+    <ul class="nav navbar-nav">
+      {{#each nav}}
+        <li class="{{#equals path ../path}}active{{/equals}}"><a href="/{{path}}">{{title}}</a></li>
+      {{/each}}
+    </ul>
+  </div>
+</nav>

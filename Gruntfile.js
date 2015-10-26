@@ -32,37 +32,39 @@ module.exports = function (grunt) {
           livereaload: 35729
         }
       }
+    },
+
+    
+    less: {
+      development: {
+        options: {
+          sourceMap: true,
+          dumpLineNumbers: true
+        },
+        files: {'_assets/css/styles.css': 'styles.less'}
+      },
+      production: {
+        options: {
+          cleancss: true,
+          compress: true
+        },
+        files: {'_assets/css/styles.min.css': 'styles.less'}
+      }
+    },
+
+    copy: {
+      bower_components: {
+        files: [{
+          expand: true,
+          cwd: 'bower_components/',
+          src: '**/*',
+          dest: '_assets/vendor'
+        }]
+      }
     }
 
 
-//    copy: {
-//      bower_components: {
-//        files: [{
-//          cwd: '',
-//          expand: true,
-//          src: 'bower_components/**/*',
-//          dest: '<%= metalsmith.destination %>/vendor'
-//        }]
-//      }
-//    },
-//
-//    less: {
-//      development: {
-//        options: {
-//          sourceMap: true,
-//          dumpLineNumbers: true
-//        },
-//        files: {'<%= metalsmith.destination %>/assets/css/styles.css': 'bower_components/bootstrap/less/bootstrap.less'}
-//      },
-//      production: {
-//        options: {
-//          cleancss: true,
-//          compress: true
-//        },
-//        files: {'<%= metalsmith.destination %>/assets/css/styles.min.css': 'bower_components/bootstrap/less/bootstrap.less'}
-//      }
-//    },
-//
+
 //    clean: {
 //      dist: {
 //        files: [{
@@ -93,6 +95,14 @@ module.exports = function (grunt) {
     })  
   })
 
+  grunt.registerTask('build', [
+    'useminPrepare',
+    'concat:generated',
+    'cssmin:generated',
+    'uglify:generated',
+    'filerev',
+    'usemin'
+  ]);
 
   // Load npm plugins to provide necessary tasks.
   grunt.loadNpmTasks('grunt-contrib-connect');

@@ -1,10 +1,9 @@
 ---
+title: CV
 layout: index.hbs
-title: Home
 collection: nav
-order: 1
+order: 20
 ---
 
-abc xyz ...
 
-
+cv....

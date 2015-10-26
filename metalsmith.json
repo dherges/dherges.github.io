@@ -1,21 +1,35 @@
 {
   "metadata": {
-    "title": "My Site",
-    "description": "stuff..."
+    "title": "spektrakel.de",
+    "description": "stuff...",
+    "site": {
+      "title": "spektrakel.de"
+    }
   },
   "source": "content",
   "destination": "_gh_pages",
   "plugins": {
+    "plugins/nav.js": {},
+    "metalsmith-collections": {
+      "nav": {
+        "sortBy": "order"
+      }
+    },
+    "metalsmith-register-helpers": {
+      "directory": "helper"
+    },
     "metalsmith-markdown": {},
+    "metalsmith-page-titles": {},
     "metalsmith-permalinks": {
       "pattern": ":title"
     },
     "metalsmith-layouts": {
-      "engine": "handlebars"
+      "engine": "handlebars",
+      "partials": "partials"
     },
     "metalsmith-assets": {
-      "source": "./assets",
-      "destination": "./assets"
+      "source": "_assets",
+      "destination": "assets"
     }
   }
 }
