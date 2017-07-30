@@ -1,11 +1,11 @@
 import { browser, element, by } from 'protractor';
 
-export class SpPage {
+export class AppPage {
   navigateTo() {
     return browser.get('/');
   }
 
-  getParagraphText() {
-    return element(by.css('sp-root h1')).getText();
+  getImprintText() {
+    return element(by.css('p')).getText();
   }
 }
