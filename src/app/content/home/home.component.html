@@ -1,0 +1,71 @@
+<header class="hero">
+  <div class="hero-header">
+    <nav role="menu"
+         class="d-flex justify-content-end">
+
+      <a *ngFor="let link of contactLinks"
+         role="menuitem"
+         class="nav-item"
+         [href]="link.href">
+        <i class="fa"
+           [ngClass]="link.icon"
+           aria-hidden="true"></i>
+        <span class="sr-only">{{ link.label }}</span>
+      </a>
+
+    </nav>
+  </div>
+
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">{{ title }}</h1>
+      <h2 class="subtitle">{{ subtitle }}</h2>
+    </div>
+  </div>
+</header>
+
+<main role="article" class="container">
+
+  <div class="d-md-flex">
+    <div class="d-md-flex flex-column">
+
+      <!-- Bio -->
+      <div class="card">
+        <p class="title">Bio</p>
+        <div class="content">
+          <p>
+            Hi there, my name is David and I am a Web Application Developer currently working at <a href="http://global.agfahealthcare.com/dach/jobs/">Agfa HealthCare</a>.
+            My professional focus is on Angular, TypeScript, and related Web Technologies for client-side applications.
+          </p>
+          <p>
+            In the past, I used to develop Android apps and implemented server-side applications with Spring Boot and friends.
+          </p>
+        </div>
+      </div>
+
+      <!-- Blog -->
+      <div class="card">
+        <p class="title">Blog</p>
+        <p class="subtitle"><a href="https://medium.com/spektrakel-blog">https://medium.com/spektrakel-blog</a></p>
+        <p class="content">I'm grooming a blog on medium.com where I write on the above technologies.</p>
+      </div>
+    </div>
+
+    <!-- CV -->
+    <div class="card">
+      <p class="title">CV</p>
+      <div class="content">
+        <dl>
+          <dt>Current Work</dt>
+          <dd>Agfa HealthCare since March 2017</dd>
+          <dt>Study and Education</dt>
+          <dd>Diploma degree in course Media Informatics at <a href="http://www.uni-ulm.de/en/in/mi/">Ulm University</a></dd>
+          <dt>Research and Publications</dt>
+          <dd>Ginger: An Access Control Framework for Telematics Applications, IEEE TrustCom'12, <a href="http://dx.doi.org/10.1109/TrustCom.2012.169">http://dx.doi.org/10.1109/TrustCom.2012.169</a></dd>
+        </dl>
+      </div>
+    </div>
+
+  </div>
+
+</main>

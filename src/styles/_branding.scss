@@ -1,0 +1,33 @@
+/*
+ * Grid
+ */
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+) !default;
+
+
+/*
+ * Colors
+ */
+$purple: #c8a1ff;
+$indigo: $purple;
+
+$theme-colors: (
+  primary: $purple
+);
+
+
+/*
+ * Typography
+ */
+
+$family-sans-serif:       'Quicksand', sans-serif;
+$font-family-sans-serif:  $family-sans-serif;
+
+$font-weight-light:   300;
+$font-weight-normal:  400;
+$font-weight-bold:    500;

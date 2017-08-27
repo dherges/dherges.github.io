@@ -1,0 +1,89 @@
+@import '../../../styles/branding';
+
+:host {
+  display: block;
+  padding-bottom: 5rem;
+}
+
+.hero {
+  padding-top: 9rem;
+  padding-bottom: 7rem;
+
+  color: #fff;
+}
+
+.hero-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding-top: 20px;
+  padding-right: 40px;
+
+  .nav-item {
+    font-size: 24px;
+    padding: 8px;
+
+    color: rgba(255, 255, 255, .7);
+
+    &:hover {
+      color: rgba(255, 255, 255, .9);
+    }
+  }
+}
+
+.hero-body {
+  .title {
+    font-weight: 500;
+    font-size: 32px;
+    word-break: break-word;
+  }
+
+  .subtitle {
+    font-weight: 300;
+    font-size: 20px;
+    word-break: break-word;
+  }
+
+  .container {
+    padding-left: 1.5rem; // Visual adjustments for the card layouts
+  }
+}
+
+
+.card {
+  padding: 1rem;
+  background-color: #fff;
+  border-radius: .3rem;
+
+  .title {
+    font-size: 20px;
+    font-weight: $font-weight-bold;
+  }
+
+  .subtitle {
+    font-size: inherit;
+    font-weight: $font-weight-bold;
+  }
+
+  .title + .subtitle {
+    margin-top: -1rem;
+  }
+}
+
+/* Cards responsive layout */
+.flex-column,
+.flex-column .card:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+@media (min-width: map-get($grid-breakpoints, 'md')) {
+  .flex-column {
+    margin-right: 2rem;
+    margin-bottom: 0;
+
+    > .card:not(:last-child) {
+      margin-bottom: 2rem;
+    }
+  }
+}

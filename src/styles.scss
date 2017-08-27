@@ -5,25 +5,37 @@
  *
  * @link https://fonts.google.com/specimen/Quicksand
  */
-@import url('//fonts.googleapis.com/css?family=Quicksand');
+@import url('//fonts.googleapis.com/css?family=Quicksand:300,400,500');
 
 /*
- * Bulma CSS Framework
- *
- * @link http://bulma.io/documentation/overview/start/
+ * Font Awesome icons
  */
-$family-sans-serif: 'Quicksand', sans-serif;
-$purple: #c8a1ff;
-$primary: $purple;
-@import "~bulma/bulma";
+@import url('//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 
+/*
+ * Normalize.css
+ */
+//@import url('~normalize.css/normalize.css');
 
 /*
  * Custom Styles
  */
-// * { font-family: arial; font-size: 11px; font-style: italic; text-align: center; }
+@import './styles/branding';
+@import '~bootstrap/scss/bootstrap-grid';
+@import '~bootstrap/scss/bootstrap-reboot';
+@import '~bootstrap/scss/utilities';
+@import '~bootstrap/scss/type';
+@import '~bootstrap/scss/code';
+@import '~bootstrap/scss/images';
+@import '~bootstrap/scss/tables';
+
 html, body {
   background-color: $purple;
+}
+
+html {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
 }
 
 body {
