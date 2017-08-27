@@ -1,4 +1,31 @@
 /* You can add global styles to this file, and also import other style files */
 
+/*
+ * Quicksand font
+ *
+ * @link https://fonts.google.com/specimen/Quicksand
+ */
+@import url('//fonts.googleapis.com/css?family=Quicksand');
 
-* { font-family: arial; font-size: 11px; font-style: italic; text-align: center; }
+/*
+ * Bulma CSS Framework
+ *
+ * @link http://bulma.io/documentation/overview/start/
+ */
+$family-sans-serif: 'Quicksand', sans-serif;
+$purple: #c8a1ff;
+$primary: $purple;
+@import "~bulma/bulma";
+
+
+/*
+ * Custom Styles
+ */
+// * { font-family: arial; font-size: 11px; font-style: italic; text-align: center; }
+html, body {
+  background-color: $purple;
+}
+
+body {
+  margin: 0;
+}
