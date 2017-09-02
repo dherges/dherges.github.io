@@ -6,12 +6,14 @@
   "scripts": {
     "ng": "ng",
     "build": "yarn run build:prod",
-    "build:prod": "ng build --aot --prod",
+    "build:dev": "ng build --dev",
+    "build:prod": "ng build --aot --prod --build-optimizer",
     "e2e": "ng e2e",
     "lint": "ng lint",
-    "start": "ng serve --extract-css",
-    "test": "ng test",
+    "start": "yarn serve",
+    "serve": "ng serve --extract-css",
     "serve:dist": "http-server dist",
+    "test": "ng test",
     "predeploy": "yarn build:prod",
     "deploy": "gh-pages --dist dist --branch master --dotfiles"
   },
