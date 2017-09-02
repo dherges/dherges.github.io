@@ -6,8 +6,8 @@
   "scripts": {
     "ng": "ng",
     "build": "yarn run build:prod",
-    "build:dev": "ng build --dev",
-    "build:prod": "ng build --aot --prod --build-optimizer",
+    "build:dev": "ng build --target=dev",
+    "build:prod": "ng build --target=production --aot --build-optimizer --extract-css false",
     "e2e": "ng e2e",
     "lint": "ng lint",
     "start": "yarn serve",
