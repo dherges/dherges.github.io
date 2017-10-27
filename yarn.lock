@@ -1476,9 +1476,9 @@ cucumber-tag-expressions@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/cucumber-tag-expressions/-/cucumber-tag-expressions-1.0.1.tgz#d6d3c43180a03f5fb4fc957fe1382ddce5cb9ac8"
 
-cucumber@~3.0.0:
-  version "3.0.6"
-  resolved "https://registry.yarnpkg.com/cucumber/-/cucumber-3.0.6.tgz#87f140b7c8dbf54904782730e25dcc450bed7db5"
+cucumber@~3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/cucumber/-/cucumber-3.1.0.tgz#13886bce87e9018ecb57999bb00c03a1bfa58d5d"
   dependencies:
     assertion-error-formatter "^2.0.0"
     babel-runtime "^6.11.6"
@@ -1491,7 +1491,7 @@ cucumber@~3.0.0:
     duration "^0.2.0"
     escape-string-regexp "^1.0.5"
     figures "2.0.0"
-    gherkin "^4.1.0"
+    gherkin "^5.0.0"
     glob "^7.0.0"
     indent-string "^3.1.0"
     is-generator "^1.0.2"
@@ -2470,9 +2470,9 @@ gh-pages@~1.0.0:
     graceful-fs "4.1.11"
     rimraf "^2.5.4"
 
-gherkin@^4.1.0:
-  version "4.1.3"
-  resolved "https://registry.yarnpkg.com/gherkin/-/gherkin-4.1.3.tgz#11687db93976df97633125a6b2228a1a4bfdfa24"
+gherkin@^5.0.0:
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/gherkin/-/gherkin-5.0.1.tgz#9e42816cd188ceefd2cc72d564ebe2cffbdfb9dc"
 
 glob-base@^0.3.0:
   version "0.3.0"
