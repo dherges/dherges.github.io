@@ -442,9 +442,9 @@ assert@^1.1.1:
   dependencies:
     util "0.10.3"
 
-assertion-error-formatter@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/assertion-error-formatter/-/assertion-error-formatter-2.0.0.tgz#17a24289cc8440889b54318e6d1187ebee2d5494"
+assertion-error-formatter@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/assertion-error-formatter/-/assertion-error-formatter-2.0.1.tgz#6bbdffaec8e2fa9e2b0eb158bfe353132d7c0a9b"
   dependencies:
     diff "^3.0.0"
     pad-right "^0.2.2"
@@ -1543,28 +1543,28 @@ csso@~2.3.1:
     clap "^1.0.9"
     source-map "^0.5.3"
 
-cucumber-expressions@^5.0.0:
-  version "5.0.2"
-  resolved "https://registry.yarnpkg.com/cucumber-expressions/-/cucumber-expressions-5.0.2.tgz#f4e03c2698bd43e92011a055d9c4ce57718b91b0"
+cucumber-expressions@^5.0.7:
+  version "5.0.7"
+  resolved "https://registry.yarnpkg.com/cucumber-expressions/-/cucumber-expressions-5.0.7.tgz#67624571178a4c5a07de055c7862025b3f8b0b18"
   dependencies:
     becke-ch--regex--s0-0-v1--base--pl--lib "^1.2.0"
 
-cucumber-tag-expressions@^1.0.0:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/cucumber-tag-expressions/-/cucumber-tag-expressions-1.0.1.tgz#d6d3c43180a03f5fb4fc957fe1382ddce5cb9ac8"
+cucumber-tag-expressions@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/cucumber-tag-expressions/-/cucumber-tag-expressions-1.1.1.tgz#7f5c7b70009bc2b666591bfe64854578bedee85a"
 
-cucumber@~3.1.0:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/cucumber/-/cucumber-3.1.0.tgz#13886bce87e9018ecb57999bb00c03a1bfa58d5d"
+cucumber@~3.2.0:
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/cucumber/-/cucumber-3.2.0.tgz#5fc4143f9a0c6c3017bb9610a941b2cbc714f493"
   dependencies:
-    assertion-error-formatter "^2.0.0"
+    assertion-error-formatter "^2.0.1"
     babel-runtime "^6.11.6"
     bluebird "^3.4.1"
     cli-table "^0.3.1"
     colors "^1.1.2"
     commander "^2.9.0"
-    cucumber-expressions "^5.0.0"
-    cucumber-tag-expressions "^1.0.0"
+    cucumber-expressions "^5.0.7"
+    cucumber-tag-expressions "^1.1.1"
     duration "^0.2.0"
     escape-string-regexp "^1.0.5"
     figures "2.0.0"
