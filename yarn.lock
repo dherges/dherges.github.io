@@ -5278,13 +5278,13 @@ promise@^7.1.1:
   dependencies:
     asap "~2.0.3"
 
-protractor-cucumber-framework@~5.0.0:
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/protractor-cucumber-framework/-/protractor-cucumber-framework-5.0.0.tgz#445c8963742e5b9e57a0da6990b3e6630ffefe26"
+protractor-cucumber-framework@~6.0.0:
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/protractor-cucumber-framework/-/protractor-cucumber-framework-6.0.0.tgz#91dd0d0a23be7db7a228abb254f449fcf125faab"
   dependencies:
     debug "^3.1.0"
     glob "^7.0.3"
-    q "^1.4.1"
+    q "^1.5.1"
     tmp "^0.0.33"
 
 protractor@~5.3.0:
@@ -5376,7 +5376,7 @@ q@1.4.1, q@~1.4.0:
   version "1.4.1"
   resolved "https://registry.yarnpkg.com/q/-/q-1.4.1.tgz#55705bcd93c5f3673530c2c2cbc0c2b3addc286e"
 
-q@^1.4.1:
+q@^1.4.1, q@^1.5.1:
   version "1.5.1"
   resolved "https://registry.yarnpkg.com/q/-/q-1.5.1.tgz#7e32f75b41381291d04611f1bf14109ac00651d7"
 
