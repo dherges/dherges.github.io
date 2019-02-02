@@ -79,7 +79,8 @@
               "src/favicon.ico",
               "src/CNAME",
               "src/.nojekyll"
-            ]
+            ],
+            "watch": false
           }
         },
         "lint": {
