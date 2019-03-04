@@ -40,6 +40,10 @@ jobs:
     <<: *defaults
     steps:
       - attach_workspace: *attach_options
+      # $ gh-pages --dist dist --branch master --dotfiles
+      # The authenticity of host 'github.com (192.30.253.113)' can't be established.
+      # RSA key fingerprint is 16:27:ac:a5:76:28:2d:36:63:1b:56:4d:eb:df:a6:48.
+      # https://circleci.com/blog/deploying-documentation-to-github-pages-with-continuous-integration/
       - run:
           name: Deploy to GitHub packages
           command: |
