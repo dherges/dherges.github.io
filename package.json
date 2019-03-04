@@ -15,7 +15,8 @@
     "serve:dist": "http-server dist",
     "test": "ng test",
     "predeploy": "yarn build:prod",
-    "deploy": "gh-pages --dist dist --branch master --dotfiles"
+    "deploy": "gh-pages --dist dist --branch master --dotfiles",
+    "release": "standard-version --message 'release: prepare release and deployment of v%s'"
   },
   "dependencies": {
     "@angular/common": "8.0.0-beta.6",
@@ -33,6 +34,7 @@
     "zone.js": "~0.8.26"
   },
   "devDependencies": {
+    "@angular-devkit/build-angular": "~0.10.0",
     "@angular/cli": "8.0.0-beta.4",
     "@angular/compiler-cli": "8.0.0-beta.6",
     "@angular/language-service": "8.0.0-beta.6",
@@ -56,9 +58,9 @@
     "lite-server": "~2.4.0",
     "protractor": "~5.4.0",
     "protractor-cucumber-framework": "~6.1.0",
+    "standard-version": "^5.0.1",
     "ts-node": "~8.0.0",
     "tslint": "~5.12.0",
-    "typescript": "3.2.4",
-    "@angular-devkit/build-angular": "~0.10.0"
+    "typescript": "3.2.4"
   }
 }
