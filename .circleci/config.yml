@@ -63,6 +63,11 @@ workflows:
     - build:
         requires:
           - install
+        filters:
+          branches:
+            ignore: /master/
+          tags:
+            only: /v.*/
     - deploy:
         requires:
           - build
