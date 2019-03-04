@@ -30,6 +30,7 @@ jobs:
   build:
     <<: *defaults
     steps:
+      - attach_workspace: *attach_options
       - run: yarn build
       - run: xvfb-run -a yarn test
       - store_artifacts:
