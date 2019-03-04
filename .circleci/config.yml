@@ -56,7 +56,9 @@ workflows:
   version: 2
   ci_workflow:
     jobs:
-    - build
+    - build:
+        requires:
+          - install
     - deploy:
         requires:
           - build
