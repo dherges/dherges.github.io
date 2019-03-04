@@ -1,26 +1,66 @@
 version: 2
-jobs:
-  build:
-    docker:
+
+defaults: &defaults
+  docker:
     - image: angular/ngcontainer:latest
-    working_directory: ~/app
+  working_directory: ~/workspace
+
+attach_options: &attach_options
+  at: ~/workspace
+
+# Jobs
+jobs:
+  install:
+    <<: *defaults
     steps:
+      # Checkout, Download and cache dependencies
       - checkout
       - restore_cache:
-          key: master-{{ checksum "yarn.lock" }}
-      - run: yarn install
+          key: latest-dependencies-{{ checksum "yarn.lock" }}
+      # Install dependencies
+      - run: yarn install --frozen-lockfile --non-interactive
       - save_cache:
-          key: master-{{ checksum "yarn.lock" }}
+          key: latest-dependencies-{{ checksum "yarn.lock" }}
           paths:
-          - ~/app/node_modules
+            - 'node_modules'
+      - persist_to_workspace:
+          root: ~/repo
+          paths: .
+
+  build:
+    <<: *defaults
+    steps:
       - run: yarn build
       - run: xvfb-run -a yarn test
       - store_artifacts:
-          path: ~/app/dist
+          path: ~/workspace/dist
 
+  deploy:
+    <<: *defaults
+    steps:
+      - attach_workspace: *attach_options
+      - run:
+          name: Deploying to GitHub packages
+          command: |
+            # CIRCLE_TAG indicates whether the job runs for the tag (as opposed to: the commit on the branch)
+            if [ -z "${CIRCLE_TAG}" ]; then
+              echo "Skipping deployment. This build job runs for a branch."
+              exit 0
+            fi
+            echo "Deploying ${CIRCLE_TAG}..."
+            yarn deploy
+
+# Workflows
 workflows:
   version: 2
-  build:
+  ci_workflow:
     jobs:
     - build
-  
+    - deploy:
+        requires:
+          - build_and_test
+        filters:
+          branches:
+            ignore: /.*/
+          tags:
+            only: /v.*/
