@@ -1,6 +1,16 @@
 @import '../styles/branding';
 
+$gradient-color-start: hsl(hue($orange), saturation($orange), lightness($orange) - 10);
+$gradient-color-middle: $orange;
+$gradient-color-end: hsl(hue($orange), saturation($orange), lightness($orange) + 10);
+
+/* purple gradient
+$gradient-color-start: #926eff;
+$gradient-color-middle: #c8a1ff;
+$gradient-color-end: #e2bbff;
+*/
+
 :host {
   display: block;
-  background-image: linear-gradient(141deg, #926eff 0%, #c8a1ff 71%, #e2bbff 100%);
+  background-image: linear-gradient(141deg, $gradient-color-start 0%, $gradient-color-middle 71%, $gradient-color-end 100%);
 }
