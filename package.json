@@ -1,6 +1,6 @@
 {
   "name": "spektrakel.de",
-  "version": "0.0.0",
+  "version": "1.0.0-rc",
   "private": true,
   "license": "MIT",
   "scripts": {
