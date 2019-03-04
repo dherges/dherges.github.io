@@ -41,7 +41,7 @@ jobs:
     steps:
       - attach_workspace: *attach_options
       - run:
-          name: Deploying to GitHub packages
+          name: Deploy to GitHub packages
           command: |
             # CIRCLE_TAG indicates whether the job runs for the tag (as opposed to: the commit on the branch)
             if [ -z "${CIRCLE_TAG}" ]; then
@@ -56,7 +56,10 @@ workflows:
   version: 2
   ci_workflow:
     jobs:
-    - install
+    - install:
+        filters:
+          tags:
+            only: /v.*/
     - build:
         requires:
           - install
