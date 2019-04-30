@@ -15,7 +15,7 @@
     "serve:dist": "http-server dist",
     "test": "ng test",
     "predeploy": "yarn build:prod",
-    "deploy": "gh-pages --dist dist --branch master --dotfiles --message 'deploy ${CIRCLE_TAG}'",
+    "deploy": "gh-pages --dist dist --branch master --dotfiles --message '[skip ci] deploy to github pages'",
     "release": "standard-version --message 'release: prepare release and deployment of v%s'"
   },
   "dependencies": {
