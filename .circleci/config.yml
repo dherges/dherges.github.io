@@ -46,6 +46,10 @@ jobs:
           fingerprints:
             - "e6:42:4d:0d:a4:8a:32:08:9c:0d:2f:40:4e:91:28:d9"
       - run:
+          name: Add SSH Host Key for github.com
+          command: |
+            ssh-keyscan github.com >> ~/.ssh/known_hosts
+      - run:
           name: Deploy to GitHub packages
           command: |
             # CIRCLE_TAG indicates whether the job runs for the tag (as opposed to: the commit on the branch)
