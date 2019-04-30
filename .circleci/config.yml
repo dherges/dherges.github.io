@@ -40,6 +40,11 @@ jobs:
     <<: *defaults
     steps:
       - attach_workspace: *attach_options
+      # Deploy from CircleCI to GitHub Pages
+      # https://circleci.com/blog/deploying-documentation-to-github-pages-with-continuous-integration/
+      - add_ssh_keys:
+          fingerprints:
+            - "e6:42:4d:0d:a4:8a:32:08:9c:0d:2f:40:4e:91:28:d9"
       - run:
           name: Deploy to GitHub packages
           command: |
