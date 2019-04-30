@@ -1,4 +1,4 @@
 spektrakel.de
 =============
 
-> [http://spektrakel.de/](http://spektrakel.de/)
+> [https://spektrakel.de/](https://spektrakel.de/)

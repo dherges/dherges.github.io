@@ -8,3 +8,5 @@ npm-debug.log
 dist/
 e2e/reports/*.json
 e2e/reports/*.txt
+secrets/
+
