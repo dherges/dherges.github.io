@@ -48,6 +48,7 @@ jobs:
       - run:
           name: Add SSH Host Key for github.com
           command: |
+            # https://github.com/openmicroscopy/devspace/issues/38#issuecomment-211515244
             ssh-keyscan github.com >> ~/.ssh/known_hosts
       - run:
           name: Deploy to GitHub packages
