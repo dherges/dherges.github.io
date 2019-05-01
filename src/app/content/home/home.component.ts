@@ -20,7 +20,7 @@ export class HomeComponent {
     },
     {
       label: 'Medium',
-      href: 'https://medium.com/spektrakel-blog',
+      href: 'https://medium.com/sparkles-blog',
       icon: 'fa-medium'
     }
   ];
