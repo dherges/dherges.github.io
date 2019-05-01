@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.1.3](https://github.com/dherges/dherges.github.io/compare/v1.1.2...v1.1.3) (2019-05-01)
+
+
+### Bug Fixes
+
+* enable google analytics on production deployment ([ddbc307](https://github.com/dherges/dherges.github.io/commit/ddbc307))
+* update to latest Angular 8 RC ([2f782b5](https://github.com/dherges/dherges.github.io/commit/2f782b5))
+
+
+
 ## [1.1.2](https://github.com/dherges/dherges.github.io/compare/v1.1.1...v1.1.2) (2019-04-30)
 
 
