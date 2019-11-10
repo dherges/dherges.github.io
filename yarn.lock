@@ -7161,10 +7161,10 @@ protoduck@^5.0.1:
   dependencies:
     genfun "^5.0.0"
 
-protractor-cucumber-framework@~6.1.0:
-  version "6.1.1"
-  resolved "https://registry.yarnpkg.com/protractor-cucumber-framework/-/protractor-cucumber-framework-6.1.1.tgz#19e56836702b014d3ec8fe4fa6a65075ee9ab056"
-  integrity sha512-zbV/JWCtpr3FrEP1tpFZeOnytuYjAVnTtE85LDOmSDFFM6fcso1X4VypwEpcvW4adSN+cBuYnCKcdm/kay1slg==
+protractor-cucumber-framework@~6.2.0:
+  version "6.2.0"
+  resolved "https://registry.yarnpkg.com/protractor-cucumber-framework/-/protractor-cucumber-framework-6.2.0.tgz#df3dc0ec3d22154e4371714c1664eb27cea97125"
+  integrity sha512-0hokzPjO+K0SqjjJQDPV6DF9jn9hgjUycoAzwDdchHkP7VXbl2xIF7ulMYh43rA1Oz+kZ8rq6MnYZQh7IToiHA==
   dependencies:
     debug "^3.1.0"
     glob "^7.1.2"
