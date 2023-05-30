@@ -54,7 +54,7 @@
     "karma-coverage-istanbul-reporter": "~2.1.0",
     "karma-jasmine": "~2.0.0",
     "karma-jasmine-html-reporter": "~1.4.0",
-    "lite-server": "~2.5.0",
+    "lite-server": "~2.6.0",
     "protractor": "~5.4.0",
     "protractor-cucumber-framework": "~6.2.0",
     "standard-version": "^7.0.0",
